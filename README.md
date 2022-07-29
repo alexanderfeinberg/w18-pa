@@ -17,11 +17,7 @@ During this assessment, you can access the following resources:
 
 ## Getting started
 
-Your application should use a database.
-
-* Create a database user named "pyweb_practice_user" with password "pyweb"
-* Create a database named "pyweb_practice_db" with owner "pyweb_practice_user"
-* Determine your [PostgreSQL database connection URI][psql-uri]
+Your application should use a SQLite3 database.
 
 Use Pipenv to install the following dependencies.
 
@@ -34,7 +30,6 @@ Use Pipenv to install the following dependencies.
 * alembic
 * flask-migrate
 * python-dotenv
-* psycopg2-binary
 * sqlalchemy
 * wtforms
 * flask-wtf
@@ -118,8 +113,8 @@ exactly like this.
 
 In the `app.config` module, create a class named `Configuration`. In there,
 create an attribute named `SQLALCHEMY_DATABASE_URI` and set it to the value of
-the proper PostgreSQL URL from the database information in the _Getting started_
-section.  Add `SQLALCHEMY_DATABASE_URI` and `SECRET_KEY` to your .env file.
+`'sqlite:///dev.db'`.
+
 Import your environment variables into app.config.py (We trust that you know how
 to use `os.environ.get`)
 
@@ -206,4 +201,3 @@ application.
 [sqlalchemy-docs]: https://docs.sqlalchemy.org/en/13/
 [wtforms-docs]: https://wtforms.readthedocs.io/en/2.3.x/
 [python-docs]: https://docs.python.org/3/index.html
-[psql-uri]: https://flask-sqlalchemy.palletsprojects.com/en/2.x/config/#connection-uri-format

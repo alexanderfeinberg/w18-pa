@@ -21,7 +21,7 @@ def client():
 
 def test_configuration_has_database_setting():
     from app.config import Configuration
-    for component in ["postgresql://", "pyweb_practice_user", "pyweb", "localhost", "pyweb_practice_db"]:
+    for component in ["sqlite:///", "dev.db"]:
         assert component in Configuration.SQLALCHEMY_DATABASE_URI
 
 
